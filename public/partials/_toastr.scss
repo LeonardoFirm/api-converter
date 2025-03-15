@@ -1,0 +1,128 @@
+$toast-width: 320px;
+$toast-max-width: 100%;
+$toast-bg: #030303;
+$toast-text-color: #ffffff;
+$toast-border-radius: 4px;
+$toast-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+$toast-padding: 12px 16px;
+$toast-font-size: 14px;
+$toast-line-height: 1.5;
+$toast-opacity: 0.95;
+
+$toast-success-bg: #51a351;
+$toast-success-text: #ffffff;
+
+$toast-error-bg: #bd362f;
+$toast-error-text: #ffffff;
+
+$toast-info-bg: #2f96b4;
+$toast-info-text: #ffffff;
+
+$toast-warning-bg: #f89406;
+$toast-warning-text: #ffffff;
+
+$toast-progress-height: 4px;
+$toast-progress-bg: rgba(255, 255, 255, 0.6);
+
+.toastr {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: auto;
+    width: $toast-width;
+    max-width: $toast-max-width;
+    background-color: $toast-bg;
+    color: $toast-text-color;
+    border-radius: $toast-border-radius;
+    box-shadow: $toast-box-shadow;
+    padding: $toast-padding;
+    font-size: $toast-font-size;
+    line-height: $toast-line-height;
+    opacity: $toast-opacity;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.toast-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-left: 10px;
+    font-size: $toast-font-size;
+    text-align: left;
+}
+
+.toast-message {
+    margin-left: 10px;
+    word-wrap: break-word;
+    font-size: $toast-font-size;
+    text-align: left;
+}
+
+.toast-close-button {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.toast-container {
+    position: fixed;
+    z-index: 9999;
+
+    &.toast-top-right {
+        top: 12px;
+        right: 12px;
+    }
+
+    &.toast-top-left {
+        top: 12px;
+        left: 12px;
+    }
+
+    &.toast-bottom-right {
+        bottom: 12px;
+        right: 12px;
+    }
+
+    &.toast-bottom-left {
+        bottom: 12px;
+        left: 12px;
+    }
+}
+
+.toast-success {
+    background-color: $toast-success-bg;
+    color: $toast-success-text;
+}
+
+.toast-error {
+    background-color: $toast-error-bg;
+    color: $toast-error-text;
+}
+
+.toast-info {
+    background-color: $toast-info-bg;
+    color: $toast-info-text;
+}
+
+.toast-warning {
+    background-color: $toast-warning-bg;
+    color: $toast-warning-text;
+}
+
+.toast-progress {
+    height: $toast-progress-height;
+    background-color: $toast-progress-bg;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}

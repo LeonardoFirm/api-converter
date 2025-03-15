@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversor de imagens para JPG, PNG, WEBP e ICO">
+    <meta name="keywords" content="conversor, imagem, jpg, png, webp, ico">
+    <title>Conversor de Imagens - Convertter &reg;</title>
+    <link rel="shortcut icon" href="/../public/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/../public/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="/../public/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script>
+        toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: "toast-top-right",
+            timeOut: 5000
+        };
+    </script>
+</head>
+
+<body>
+
+    <div id="overlay" class="overlay"></div>
+
+    <div id="sidebar" class="sidebar">
+        <ul class="sidebar-menu">
+            <img src="/../public/favicon.ico" class="img-fav" alt="Logo">
+            <li><a href="#"><i class="bx bx-home"></i><span>Conversor</span></a></li>
+            <li><a href="#"><i class="bx bx-info-circle"></i><span>Sobre</span></a></li>
+            <li><a href="#"><i class="bx bx-cog"></i><span>Serviços</span></a></li>
+            <li><a href="#"><i class="bx bx-phone"></i><span>Contato</span></a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <nav class="navbar">
+            <!-- primeira nav -->
+            <div class="desktop-links">
+                <div class="left-links">
+                    <a href="/api-docs" target="_blank">API</a>
+                    <a href="javascript:void(0);" data-modal-target="#register">Registro</a>
+                    <a href="javascript:void(0);" data-modal-target="#new">Novidades</a>
+                    <a href="javascript:void(0);" data-modal-target="#dev">Desenvolvedor</a>
+                </div>
+                <div class="right-links">
+                    <a href="javascript:void(0);" data-modal-target="#login"> <i class="bx bx-user"></i> Login</a>
+                </div>
+            </div>
+            <button id="sidebar-toggle" class="navbar-toggler">☰</button>
+        </nav>
+
+        <nav class="navbar-2">
+            <!-- segunda nav -->
+            <div class="desktop-links-2">
+                <img src="/../public/favicon.ico" class="img-fav" alt="Logo">
+                <a href="#">Conversor</a>
+                <a href="#">Sobre</a>
+                <a href="#">Planos</a>
+                <a href="#">Serviços</a>
+                <a href="#">Suporte</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1>Convertter &reg;</h1>
+            <h3>Converta seus arquivos online e grátis</h3>
+        </div>
+
+        <form id="uploadForm">
+            <div class="container-content">
+                <section class="botoes-content">
+                    <div class="container-file">
+                        <div class="custom-file-upload" onclick="document.getElementById('imageInput').click();">
+                            Selecione um Arquivo <i class='bx bxs-image-add bx-size'></i>
+                        </div>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" multiple required>
+                    <div id="progressContainer" class="progress" style="display: none;">
+                        <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
+                            style="width: 0%;"></div>
+                    </div>
+                    <div class="container-select-1">
+                        <select id="uploadFormatSelect">
+                            <option value="" selected disabled>*</option>
+                            <option value="jpg">JPG</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WEBP</option>
+                            <option value="tiff">TIFF</option>
+                            <option value="gif">GIF</option>
+                            <option value="heif">HEIF</option>
+                            <option value="heic">HEIC</option>
+                            <option value="raw">RAW</option>
+                            <option value="jp2">JP2</option>
+                            <option value="jpx">JPX</option>
+                            <option value="j2k">J2K</option>
+                            <option value="j2c">J2C</option>
+                            <option value="ico">ICO</option> <!-- ICO habilitado -->
+                            <option value="avif">AVIF</option>
+                            <option value="pdf">PDF</option>
+                        </select>
+                    </div>
+                    <h2 class="badge">Para</h2>
+                    <div class="container-select-1">
+                        <select id="convertFormatSelect">
+                            <option value="" selected disabled>*</option>
+                            <option value="jpg">JPG</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WEBP</option>
+                            <option value="tiff">TIFF</option>
+                            <option value="gif">GIF</option>
+                            <option value="heif">HEIF</option>
+                            <option value="heic">HEIC</option>
+                            <option value="raw">RAW</option>
+                            <option value="jp2">JP2</option>
+                            <option value="jpx">JPX</option>
+                            <option value="j2k">J2K</option>
+                            <option value="j2c">J2C</option>
+                            <option value="ico">ICO</option> <!-- ICO habilitado -->
+                            <option value="avif">AVIF</option>
+                            <option value="pdf">PDF</option>
+                        </select>
+                    </div>
+                </section>
+                <div class="container-info">
+                    <p class="titulo-input-up"> Clique
+                        no icone <button type="button" class="btn-info" data-modal-target="#info"><i
+                                class="bx bxs-info-circle"></i></button> para mais
+                        informações, sobre as conversões.</p>
+                </div>
+            </div>
+
+            <section class="container-img">
+                <p class="titulo-tabela-up">Seus arquivos carregados, aparecem na tabela abaixo</p>
+                <div id="uploadLinks">
+                    <table id="uploadTable">
+                        <thead>
+                            <tr>
+                                <th>Imagem</th>
+                                <th>Nome do Arquivo</th>
+                                <th>Tamanho</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="previewContainer"></tbody>
+                    </table>
+                    <div id="batchActionsConverter" class="convert-action" style="display: none;">
+                        <button id="convertAllBtn">Converter Todas</button>
+                    </div>
+                </div>
+            </section>
+
+        </form>
+
+        <section class="container-img">
+            <p class="titulo-tabela-up">Sua(as) imagem(as) convertida(as), aparecem na tabela abaixo </p>
+            <div id="downloadLinks">
+                <table id="downloadsTable">
+                    <thead>
+                        <tr>
+                            <th>Miniatura</th>
+                            <th>Nome do Arquivo</th>
+                            <th>Tamanho</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="downloadTableBody"></tbody>
+                </table>
+                <div id="batchActionsDownload" class="download-action" style="display: none;">
+                    <button id="downloadAllBtn">Baixar Todas</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container-converte">
+            <a href="index.html" class="btn-conveter" target="_self" title="Converter mais">Converter mais</a>
+        </div>
+
+
+    </div>
+
+    <section class="container-explication">
+        <h3 class="titulo-saiba">Saiba mais</h3>
+        <p class="subtitulo-saiba">Descubra o significado das extensões mais usadas: JPG, PNG, WEBP e ICO</p>
+
+        <div class="row gy-4">
+            <div class="col-lg-6 col-12">
+                <div class="card-exp">
+                    <span class="tag">JPG</span>
+                    <h3 class="titulo-card">Joint Photographic Experts Group</h3>
+                    <p class="paragrafo">A extensão JPG foi atribuída para ficheiros de imagens. Muitas fotos e gráficos
+                        web são guardados
+                        em JPG. A fim de comprimir muitos bitmaps são guardados em .jpg, o que torna mais fácil
+                        transferir e descarregar estes ficheiros na Internet. Formato JPG baseado na paleta de cores de
+                        24-bits, quanto mais alto o nível de compressão aplicado para criar o ficheiro JPG, maior o
+                        efeito de descompressão sobre a qualidade da imagem.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="card-exp">
+                    <span class="tag">PNG</span>
+                    <h3 class="titulo-card">Portable Network Graphic</h3>
+                    <p class="paragrafo">PNG é um formato de armazenamento de dados de gráficos raster que utiliza o
+                        algoritmo de
+                        compressão sem perdas para Deflacionar. O PNG foi criado como um formato livre para substituir o
+                        GIF. O PNG suporta três tipos principais de imagens raster: imagem a preto e branco, uma cor de
+                        imagem indexada e imagem de cores. Formato PNG armazena informações gráficas numa forma
+                        comprimida.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="card-exp">
+                    <span class="tag">WEBP</span>
+                    <h3 class="titulo-card">Formato de Imagem WebP</h3>
+                    <p class="paragrafo">Este é um novo formato que suporta compressão de qualidade sem perdas e com
+                        perdas para imagens
+                        na Internet. A empresa Google desenvolveu este formato especificamente para funcionar on-line
+                        tão rápida e convenientemente quanto possível. A principal vantagem é que o seu tamanho de
+                        ficheiro é pequeno comparado com outros formatos de imagem, mas semelhante na qualidade da
+                        imagem.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="card-exp">
+                    <span class="tag">ICO</span>
+                    <h3 class="titulo-card">Ícone</h3>
+                    <p class="paragrafo">ICO é um ficheiro deste formato que contém normalmente uns pequenos ícones de
+                        imagem de
+                        resoluções diferentes (16x16, 32x32, 64x64 pixels) e diversas profundidades de cor (16 cores,
+                        32, 64, 128, 256, 16-bit, e assim por diante). Usado para exibir ficheiros e pastas nos sistemas
+                        operativos para interface de utilizador gráfica (GUI). Este formato pode ser aberto com a ajuda
+                        do programa ACDSee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal__overlay" id="info">
+        <div class="modal__content w__info">
+            <div class="modal__header">Filtro de Consulta</div>
+            <div class="modal__body">
+                <ul class="ul-modal">
+                    <li> <i class="bx bx-check"></i> Escolha apenas um formato de imagem por vez para converter.
+                    </li>
+                    <li> <i class="bx bx-check"></i> Selecione até 10 imagens por conversão.</li>
+                    <li> <i class="bx bx-check"></i> Arquivos no máximo de 10MB.</li>
+                    <li> <i class="bx bx-check"></i> Após converter, clique no botões <strong>Baixar</strong> ao
+                        lado de cada imagem para baixar individualmente ou em <strong>Baixar Todas</strong> para
+                        baixar todas as imagens convertidas.</li>
+                    <li> <i class="bx bx-check"></i> Para converter mais imagens, clique no botão <strong>Converter
+                            mais</strong> que está abaixo da tabela com as imagens convertidas.</li>
+                    <li> <i class="bx bx-check"></i> Não temos limite diário de conversão. Você poderá converter +1K
+                        de imagens por dia.</li>
+                    <li> <i class="bx bx-check"></i> Alguns formatos não podem ser convertidos no momento, então
+                        eles não aparecerão para escolha.</li>
+                    <li> <i class="bx bx-check"></i> Aproveite a conversão de imagens gratuitamente!</li>
+                </ul>
+            </div>
+            <div class="modal__footer">
+                <button class="button button-primary" data-modal-close>Certo!</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal__overlay" id="register">
+        <div class="modal__content w__register">
+            <form action="../auth/register.php" method="post" id="registerForm">
+                <div class="modal__header">
+                    Crie uma conta
+                    <p class="paragrafo">Preencha o formulário abaixo para criar uma conta</p>
+                </div>
+                <div class="modal__body">
+                    <div class="row gy-4">
+                        <div class="col-12 mb-4">
+                            <div class=form-group>
+                                <label for="username">Usuário</label>
+                                <small class="info">(Informe um nome de usuário com no mínimo 8 caracteres)</small>
+                                <input type="text" id="username" name="username" class="form-control"
+                                    placeholder=" Usuário" autocomplete="false" minlength="8" required>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class=form-group>
+                                <label for="email">E-mail</label>
+                                <small class="info">(Informe um e-mail válido)</small>
+                                <input type="email" id="email" name="email" class="form-control" placeholder=" E-mail"
+                                    autocomplete="false" minlength="10" required>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class=form-group>
+                                <label for="contact">WhatsApp</label>
+                                <small class="info">(Informe o DDD + Número)</small>
+                                <input type="text" id="contact" name="contact" class="form-control"
+                                    placeholder=" WhatsApp" autocomplete="false" minlength="11" required>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class=form-group>
+                                <label for="passwd">Senha</label>
+                                <small class="info">(Informe uma senha com no mínimo 12 caracteres)</small>
+                                <input type="password" id="passwd" name="passwd" class="form-control"
+                                    placeholder=" Senha" autocomplete="false" minlength="12" required>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class=form-group>
+                                <label for="repeatPasswd">Repetir Senha</label>
+                                <small class="info">(Informe a mesma senha)</small>
+                                <input type="password" id="repeatPasswd" name="repeatPasswd" class="form-control"
+                                    placeholder=" Repetir Senha" autocomplete="false" minlength="12" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn-secondary" data-modal-close="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal__overlay" id="new">
+        <div class="modal__content w__new">
+            <div class="modal__header">O que há de novo?</div>
+            <div class="modal__body">
+                <!-- <h3>Nenhuma novidade no momento.</h3> -->
+                <ul class="ul-modal">
+                    <small>13/03/2025 às 15:45</small>
+                    <li> <i class="bx bxs-server"></i> Disponibilizamos nossa <strong>API</strong> de conversão de
+                        imagens para que desenvolvedores a integrem gratuitamente em suas aplicações. <small><a
+                                href="/api-docs" class="link-modal" target="_blank">Leia mais <i
+                                    class="bx bx-link-external"></i> </a></small></li>
+                </ul>
+            </div>
+            <div class="modal__footer">
+                <button type="button" class="btn btn-secondary" data-modal-close="modal">Certo!</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal__overlay" id="dev">
+        <div class="modal__content w__dev">
+            <div class="modal__header">Desenvolvedor</div>
+            <div class="modal__body">
+                <p class="dev-titulo">Devpoa - Desenvolvimento Web</p>
+                <p class="dev-titulo"> <i class="bx bxl-wordpress"></i> Site: <a href="https://lp.devpoa.com.br"
+                        target="_blank">lp.devpoa.com.br <i class="bx bx-link-external"></i> </a></p>
+                <p class="dev-titulo"> <i class="bx bx-mail-send"></i> E-mail: <a href="mailto:sac@devpoa.com.br"
+                        target="_blank">sac@devpoa.com.br <i class="bx bx-link-external"></i> </a></p>
+                <p class="dev-titulo"> <i class="bx bxl-whatsapp"></i> Contato: <a href="#" target="_blank">(51)
+                        99742-1833 <i class="bx bx-link-external"></i> </a></p>
+            </div>
+            <div class="modal__footer">
+                <button type="button" class="btn btn-secondary" data-modal-close="modal">Certo!</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal__overlay" id="login">
+        <div class="modal__content w__register">
+            <form action="../auth/verificaLogin.php" method="post" id="loginForm">
+                <div class="modal__header">
+                    Login
+                    <p class="paragrafo">Preencha o formulário abaixo para efetuar o login</p>
+                </div>
+                <div class="modal__body">
+                    <div class="row gy-4">
+                        <div class="col-12 mb-4">
+                            <div class=form-group>
+                                <label for="email">E-mail</label>
+                                <small class="info">(Informe seu e-mail)</small>
+                                <input type="email" id="email" name="email" class="form-control" placeholder=" E-mail"
+                                    autocomplete="false" required>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class=form-group>
+                                <label for="password">Senha</label>
+                                <small class="info">(Informe sua senha secreta)</small>
+                                <input type="password" id="password" name="password" class="form-control"
+                                    placeholder=" Senha" autocomplete="false" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn-secondary" data-modal-close="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <footer class="creditos">
+        <article class="article-footer">
+            <!-- <h3>Conversor de Imagens</h3> -->
+            <img src="/../public/favicon.png" alt="Logo" title="Convertter  &reg;">
+            <p class="footer-subtitulo">Conversor de imagens gratuito</p>
+        </article>
+        <p class="footer-copyright">Copyright Convertter &reg; 2025. Todos os direitos reservados. Criado por <a
+                href="https://lp.devpoa.com.br">Devpoa</a></p>
+    </footer>
+
+    <script src="/../public/script.js"></script>
+    <script src="/../public/select.choise.js"></script>
+    <script src="/../public/modal.js"></script>
+    <script src="/../public/error.js"></script>
+    <script src="/../public/toastr.js"></script>
+</body>
+
+</html>

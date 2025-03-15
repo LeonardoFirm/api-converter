@@ -1,0 +1,80 @@
+@import 'partials/colors.scss';
+@import 'partials/toastr.scss';
+@import 'partials/forms.scss';
+@import 'partials/side.scss';
+@import 'partials/inputUpload.scss';
+@import 'partials/tabelaUpload.scss';
+@import 'partials/tabelaDownload.scss';
+@import 'partials/explication.scss';
+@import 'partials/footer.scss';
+@import 'partials/modals.scss';
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+
+    &-track {
+        background-color: $bg--dark;
+    }
+
+    &-thumb {
+        background-color: $bg--quinary;
+        border-radius: 10px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    margin: 0;
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    text-align: center;
+    margin: 0;
+    background: $bg--white;
+    font-family: $font--primary;
+
+    h1 {
+        margin-top: 5rem;
+        font-size: 4em;
+        color: $bg--quinary;
+    }
+}
+
+.btn-info {
+    background: none;
+    color: $bg--text;
+    border: none;
+}
+
+.container-converte {
+    position: relative;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 0;
+    display: inline-block;
+    width: 100%;
+
+    .btn-conveter {
+        text-decoration: none;
+        background-color: $bg--input;
+        color: $bg--dark;
+        border: none;
+        border-radius: .5rem;
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: all .5s ease;
+
+        &:hover {
+            background-color: darken($color: $bg--input, $amount: 5);
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.container-explication {
+    position: relative;
+    padding: 2rem;
+    border-radius: 0;
+    display: inline-block;
+    width: 1200px;
+    max-width: 100%;
+
+    .titulo-saiba {
+        font-size: 2em;
+        color: darken($bg--text, 20%);
+    }
+
+    .subtitulo-saiba {
+        font-size: 1.5em;
+        color: darken($bg--text, 20%);
+        margin-bottom: 2rem;
+    }
+
+    .card-exp {
+        background-color: $bg--teritory;
+        padding: 5rem;
+        border-radius: .2rem;
+        text-align: justify;
+        height: 250px;
+    }
+
+    .tag {
+        position: relative;
+        top: -10%;
+        right: 0;
+        font-size: 12px;
+        color: $bg--tertiary;
+        border: 1px solid $bg--tertiary;
+        padding: .5rem 1rem;
+    }
+
+    .titulo-card {
+        font-size: auto;
+        color: darken($bg--text, 20%);
+    }
+
+    .paragrafo {
+        font-size: 12px;
+        color: darken($bg--text, 20%);
+        margin-top: 2rem;
+    }
+}

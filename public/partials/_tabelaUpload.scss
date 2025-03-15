@@ -1,0 +1,111 @@
+.titulo-tabela-up {
+    font-size: 12px;
+    color: darken($bg--text, 20%);
+    text-align: justify;
+}
+
+.container-img {
+    position: relative;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 0;
+    display: inline-block;
+    width: 100%;
+    max-width: 1200px;
+
+    #uploadLinks {
+        margin: 2rem auto;
+        background: $bg--light;
+        padding: 2rem;
+        border-radius: .5rem;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+        width: 100%;
+    }
+
+    #uploadLinks table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+
+    #uploadLinks th,
+    #uploadLinks td {
+        padding: 10px;
+        text-align: center;
+        border: none;
+    }
+
+    #uploadLinks th {
+        background-color: $bg--white;
+        color: darken($bg--text, 10%);
+    }
+
+    #uploadLinks td img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: .5rem;
+    }
+
+    #uploadLinks .action-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    #uploadLinks button {
+        padding: 8px 12px;
+        font-size: 14px;
+        border: none;
+        border-radius: .5rem;
+        cursor: pointer;
+        transition: background-color .3s ease;
+    }
+
+    #uploadLinks button.convert-btn {
+        background-color: lighten($bg--dark, 10%);
+        color: $bg--light;
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: lighten($bg--dark, 15%);
+        }
+    }
+
+    #uploadLinks button.delete-btn {
+        background-color: $bg--senary;
+        color: $bg--light;
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: darken($bg--senary, 10%);
+        }
+    }
+
+    .delete-btn {
+        background-color: $bg--senary;
+        color: white;
+        cursor: pointer;
+    }
+
+    .convert-action {
+        display: flex;
+        justify-content: flex-end !important;
+        align-items: flex-end !important;
+
+        button {
+            position: absolute;
+            bottom: -3%;
+            right: 16%;
+            background: lighten($bg--dark, 10%);
+            color: $bg--light;
+            transition: all .3s ease;
+
+            &:hover {
+                background: lighten($bg--dark, 15%);
+                box-shadow: $box-shadow;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.form-control {
+    background: darken($color: $bg--dark, $amount: 3);
+    color: $bg--quinary;
+    border: none;
+    height: 40px;
+    font-size: 14px;
+    transition: all 0.5s !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: darken($color: $bg--dark, $amount: 2);
+        color: $bg--quinary;
+        border: 1px solid $bg--quinary;
+        outline: none;
+        box-shadow: none;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $bg--quinary;
+    }
+
+    &::-moz-placeholder {
+        color: $bg--quinary;
+    }
+
+    &:-ms-input-placeholder {
+        color: $bg--quinary;
+    }
+
+    &::placeholder {
+        color: darken($color: $bg--text, $amount: 10);
+        font-size: 12px;
+    }
+}
+
+label {
+    text-align: start !important;
+}
+
+small.info {
+    color: $bg--quinary;
+    font-size: 1.2rem;
+}

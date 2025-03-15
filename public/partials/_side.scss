@@ -1,0 +1,256 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: $bg--dark;
+    color: $bg--white;
+    transition: left 0.3s ease;
+    padding-top: .9rem;
+    z-index: 1001;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    gap: 1rem;
+
+    .img-fav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        margin-left: 2.5rem;
+    }
+}
+
+.sidebar-menu li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar-menu li a {
+    color: $bg--white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 1rem;
+    border-radius: .5rem;
+    gap: 1rem;
+}
+
+.sidebar-menu li a .link-text {
+    display: inline-block;
+}
+
+.sidebar-menu li a:hover {
+    background-color: lighten($bg--dark, 5%);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.content {
+    transition: margin-left 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    background-color: darken($bg--nav, 0);
+    padding: 1rem;
+
+    .desktop-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 2rem;
+        width: 100%;
+        gap: 1rem;
+
+        .left-links {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .right-links {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    .desktop-links a {
+        color: $bg--text;
+        text-decoration: none;
+        font-size: 11px;
+        padding: .5rem;
+
+        &:hover {
+            color: $bg--light;
+            border-radius: 5px;
+        }
+    }
+
+    .navbar-toggler {
+        background: none;
+        border: none;
+        color: $bg--white;
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+    }
+}
+
+.navbar-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darken($bg--light, 0);
+    border: .5px solid $bg--border;
+    margin: 0;
+
+    .img-fav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        margin: 1rem 1rem 1rem 0;
+    }
+
+    .desktop-links-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2rem;
+    }
+
+    .desktop-links-2 a {
+        color: darken($bg--text, 50%);
+        text-decoration: none !important;
+        font-size: 16px !important;
+        padding: .5rem;
+
+        &:hover {
+            color: darken($bg--text, 10%);
+            border-radius: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        left: -250px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .overlay.show {
+        display: block;
+        opacity: 1;
+    }
+
+    .content.open {
+        margin-left: 0;
+    }
+
+    .sidebar-menu li a .link-text {
+        display: none;
+    }
+
+    .sidebar-menu li a i {
+        font-size: 24px;
+    }
+
+    .desktop-links {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .sidebar {
+        display: none;
+    }
+
+    .desktop-links {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+    }
+
+    .container-content {
+        margin: 1rem auto !important;
+        width: 350px !important;
+        max-width: 100%;
+
+        .container {
+            width: 100%;
+            padding: 1rem !important;
+        }
+
+        #previewContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-top: 10px;
+        }
+
+        .previewImage {
+            width: 140px !important;
+        }
+
+        .imageInfo {
+            font-size: 10px !important;
+        }
+
+        .container-file {
+            .custom-file-upload {
+                max-width: 200px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,6 @@
+# Arquivo ON
+RewriteEngine On
+#RewriteRule ^(.*)$ http://localhost:3000/$1 [P,L]
+
+# Diretório padrão
+DirectoryIndex public/index.html
