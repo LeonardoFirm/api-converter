@@ -2,14 +2,14 @@
 // config.php
 
 function getDatabaseConnection() {
-    $host = 'localhost';
-    $dbname = 'db_convertter_api';
-    $username = 'root';
-    $password = '';
+    $host = getenv('DB_HOST');
+    $dbname = getenv('DB_NAME');
+    $username = getenv('DB_USER');
+    $password = getenv('DB_PASSWORD');
 
     return new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 }
 
-// Defina a chave secreta do JWT
-putenv('JWT_SECRET=sua_chave_secreta_aqui');
+// A chave da API para autenticação foi definida no no .env
+putenv("JWT_SECRET=" . getenv('JWT_SECRET'));
 ?>
