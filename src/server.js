@@ -4,12 +4,8 @@ import { PORT, OUTPUT_DIR, UPLOAD_DIR } from './config.js';
 import router from './routes.js';
 import fs from 'fs';
 import swaggerSetup from './swagger.js';
-<<<<<<< HEAD
 import path from 'path';
 import url from 'url'; // Importando o módulo url para manipular o caminho
-=======
-import path from 'path'; // Importando o módulo path
->>>>>>> 1e14ad419ebdde8b9f30d8311f0d9350806094c2
 
 const app = express();
 
