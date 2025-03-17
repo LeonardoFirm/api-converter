@@ -78,3 +78,16 @@ body {
         }
     }
 }
+
+.content-title-destaque {
+    margin-top: 1rem;
+
+    .destaque {
+        background: $bg--quinary;
+        color: $bg--dark;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
