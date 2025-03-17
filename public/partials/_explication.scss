@@ -1,6 +1,10 @@
+#sobre {
+    padding-top: 12vh;
+}
+
 .container-sobre {
     position: relative;
-    padding: 2rem;
+    padding: 5rem 2rem;
     border-radius: 0;
     display: inline-block;
     width: 100%;
@@ -63,13 +67,19 @@
     }
 }
 
+#extensoes {
+    scroll-margin-top: 7rem;
+    padding-top: 15vh;
+}
+
 .container-explication {
     position: relative;
-    padding: 10rem 2rem;
+    padding: 0 2rem 20rem 2rem;
     border-radius: 0;
     display: inline-block;
     width: 1200px;
     max-width: 100%;
+    height: auto;
 
     .titulo-saiba {
         font-size: 4em;
@@ -80,7 +90,7 @@
     .subtitulo-saiba {
         font-size: 1.5em;
         color: darken($bg--text, 20%);
-        margin-bottom: 2rem;
+        margin-bottom: 5rem;
     }
 
     .card-exp {

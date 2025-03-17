@@ -726,9 +726,13 @@ small.info {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+#sobre {
+  padding-top: 12vh;
+}
+
 .container-sobre {
   position: relative;
-  padding: 2rem;
+  padding: 5rem 2rem;
   border-radius: 0;
   display: inline-block;
   width: 100%;
@@ -784,13 +788,19 @@ small.info {
   margin-top: 2rem;
 }
 
+#extensoes {
+  scroll-margin-top: 7rem;
+  padding-top: 15vh;
+}
+
 .container-explication {
   position: relative;
-  padding: 10rem 2rem;
+  padding: 0 2rem 20rem 2rem;
   border-radius: 0;
   display: inline-block;
   width: 1200px;
   max-width: 100%;
+  height: auto;
 }
 .container-explication .titulo-saiba {
   font-size: 4em;
@@ -800,7 +810,7 @@ small.info {
 .container-explication .subtitulo-saiba {
   font-size: 1.5em;
   color: #8b8b8b;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 .container-explication .card-exp {
   background-color: #f6f6f6;
@@ -1038,6 +1048,7 @@ small.info {
 html {
   margin: 0;
   font-size: 62.5%;
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
