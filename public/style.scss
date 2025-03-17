@@ -61,6 +61,7 @@ body {
     border-radius: 0;
     display: inline-block;
     width: 100%;
+    margin-bottom: 7rem;
 
     .btn-conveter {
         text-decoration: none;
@@ -90,4 +91,13 @@ body {
         font-size: 1em;
         font-weight: bold;
     }
+}
+
+.destaque {
+    background: $bg--quinary;
+    color: $bg--dark;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    font-size: 1em;
+    font-weight: bold;
 }

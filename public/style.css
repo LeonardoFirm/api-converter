@@ -705,9 +705,67 @@ small.info {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.container-explication {
+.container-sobre {
   position: relative;
   padding: 2rem;
+  border-radius: 0;
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+}
+.container-sobre .container-sobre {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 960px;
+  height: 500px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.container-sobre .container-sobre .titulo-sobre {
+  font-size: 4em;
+  color: #8b8b8b;
+  margin-bottom: 3rem;
+}
+.container-sobre .container-sobre .subtitulo-sobre {
+  font-size: 1.5em;
+  color: #8b8b8b;
+  margin-bottom: 5rem;
+}
+.container-sobre .container-sobre .card-exp {
+  background-color: #f6f6f6;
+  padding: 5rem;
+  border-radius: 0.2rem;
+  text-align: justify;
+  height: 250px;
+}
+.container-sobre .container-sobre .tag {
+  position: relative;
+  top: -10%;
+  right: 0;
+  font-size: 12px;
+  color: #DE3163;
+  border: 1px solid #DE3163;
+  padding: 0.5rem 1rem;
+}
+.container-sobre .container-sobre .titulo-card {
+  font-size: auto;
+  color: #8b8b8b;
+}
+.container-sobre .container-sobre .paragrafo {
+  font-size: 12px;
+  color: #8b8b8b;
+  margin-top: 2rem;
+}
+
+.container-explication {
+  position: relative;
+  padding: 10rem 2rem;
   border-radius: 0;
   display: inline-block;
   width: 1200px;
@@ -986,6 +1044,7 @@ body h1 {
   border-radius: 0;
   display: inline-block;
   width: 100%;
+  margin-bottom: 7rem;
 }
 .container-converte .btn-conveter {
   text-decoration: none;
@@ -1006,6 +1065,15 @@ body h1 {
   margin-top: 1rem;
 }
 .content-title-destaque .destaque {
+  background: #6dff33;
+  color: #101820;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.destaque {
   background: #6dff33;
   color: #101820;
   padding: 0.5rem 1rem;
