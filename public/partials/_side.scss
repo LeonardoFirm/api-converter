@@ -76,11 +76,16 @@
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between !important;
     align-items: center;
     background-color: darken($bg--nav, 0);
     padding: 1rem;
+    z-index: 999;
 
     .desktop-links {
         display: flex;
@@ -135,12 +140,17 @@
 }
 
 .navbar-2 {
+    position: fixed;
+    top: 4.9%;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: darken($bg--light, 0);
     border: .5px solid $bg--border;
     margin: 0;
+    z-index: 999;
 
     .img-fav {
         display: flex;

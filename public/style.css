@@ -206,11 +206,16 @@ small.info {
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between !important;
   align-items: center;
   background-color: #101820;
   padding: 1rem;
+  z-index: 999;
 }
 .navbar .desktop-links {
   display: flex;
@@ -258,12 +263,17 @@ small.info {
 }
 
 .navbar-2 {
+  position: fixed;
+  top: 4.9%;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   border: 0.5px solid #e1e1e1;
   margin: 0;
+  z-index: 999;
 }
 .navbar-2 .img-fav {
   display: flex;
