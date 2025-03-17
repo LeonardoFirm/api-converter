@@ -4,6 +4,7 @@ import { PORT, OUTPUT_DIR, UPLOAD_DIR } from './config.js';
 import router from './routes.js';
 import fs from 'fs';
 import swaggerSetup from './swagger.js';
+import path from 'path';
 
 const app = express();
 
