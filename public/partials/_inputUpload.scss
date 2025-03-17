@@ -1,4 +1,7 @@
 @media screen and (min-width: 768px) {
+    .container-mobile {
+        display: none;
+    }
 
     // container upload
     .container-content {
@@ -164,10 +167,26 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 5rem 1rem;
+            padding: auto 1rem;
+
+            .destaque {
+                background: $bg--quinary;
+                color: $bg--dark;
+                padding: .1rem 1.3rem;
+                border-radius: .5rem;
+                font-size: 1em;
+                font-weight: bold;
+            }
 
             h1 {
-                font-size: 4em;
+                font-size: auto;
+                color: $bg--text;
+            }
+
+            p {
+                padding: 1rem 0 0 0;
+                font-size: 1.2em;
+                color: $bg--text;
             }
         }
     }

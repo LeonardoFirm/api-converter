@@ -353,6 +353,9 @@ small.info {
   }
 }
 @media screen and (min-width: 768px) {
+  .container-mobile {
+    display: none;
+  }
   .container-content {
     position: relative;
     margin-top: 10rem;
@@ -497,10 +500,24 @@ small.info {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5rem 1rem;
+    padding: auto 1rem;
+  }
+  .container-mobile .content-mobile .destaque {
+    background: #6dff33;
+    color: #101820;
+    padding: 0.1rem 1.3rem;
+    border-radius: 0.5rem;
+    font-size: 1em;
+    font-weight: bold;
   }
   .container-mobile .content-mobile h1 {
-    font-size: 4em;
+    font-size: auto;
+    color: #bebebe;
+  }
+  .container-mobile .content-mobile p {
+    padding: 1rem 0 0 0;
+    font-size: 1.2em;
+    color: #bebebe;
   }
   main {
     display: none;
