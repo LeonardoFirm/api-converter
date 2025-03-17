@@ -72,7 +72,8 @@
     max-width: 100%;
 
     .titulo-saiba {
-        font-size: 2em;
+        font-size: 4em;
+        text-transform: capitalize;
         color: darken($bg--text, 20%);
     }
 

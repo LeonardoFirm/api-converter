@@ -63,6 +63,10 @@ body {
     width: 100%;
     margin-bottom: 7rem;
 
+    p.titulo-converte {
+        font-size: 14px;
+    }
+
     .btn-conveter {
         text-decoration: none;
         background-color: $bg--input;
@@ -80,16 +84,20 @@ body {
     }
 }
 
-.content-title-destaque {
-    margin-top: 1rem;
+.container-title {
+    margin-top: 20rem;
 
-    .destaque {
-        background: $bg--quinary;
-        color: $bg--dark;
-        padding: .5rem 1rem;
-        border-radius: .5rem;
-        font-size: 1em;
-        font-weight: bold;
+    .content-title-destaque {
+        margin-top: 1rem;
+
+        .destaque {
+            background: $bg--quinary;
+            color: $bg--dark;
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+            font-size: 1em;
+            font-weight: bold;
+        }
     }
 }
 

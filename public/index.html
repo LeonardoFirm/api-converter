@@ -35,15 +35,6 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1EBTF0VVH"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-H1EBTF0VVH');
-    </script>
     <script>
         toastr.options = {
             closeButton: true,
@@ -68,151 +59,134 @@
 
         <div id="overlay" class="overlay"></div>
 
-        <div id="sidebar" class="sidebar">
-            <ul class="sidebar-menu">
-                <img src="/logo.webp" class="img-fav" alt="Logo" title="Converetter &reg;">
-                <li><a href="index" title="Página inicial"><i class="bx bx-home"></i><span>Conversor</span></a></li>
-                <li><a href="#sobre" title="Saiba mais sobre o Convertter"><i
-                            class="bx bx-info-circle"></i><span>Sobre</span></a></li>
-                <li><a href="#extensoes" title="Saiba mais sobre as extensões mais usadas"><i
-                            class="bx bx-cog"></i><span>Extensões</span></a></li>
-                <li><a href="https://wa.me/5551997421833?text=Ol%C3%A1%2C%20Devpoa!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Convertter%2C%20conversor%20de%20imagens."
-                        target="_blank" title="Solicite suporte via WhatsApp"><i
-                            class="bx bx-phone"></i><span>Contato</span></a></li>
-            </ul>
-        </div>
+        <div id="fix">
+            <div id="sidebar" class="sidebar">
+                <ul class="sidebar-menu">
+                    <img src="/logo.webp" class="img-fav" alt="Logo" title="Converetter &reg;">
+                    <li><a href="index" title="Página inicial"><i class="bx bx-home"></i><span>Conversor</span></a></li>
+                    <li><a href="#sobre" title="Saiba mais sobre o Convertter"><i
+                                class="bx bx-info-circle"></i><span>Sobre</span></a></li>
+                    <li><a href="#extensoes" title="Saiba mais sobre as extensões mais usadas"><i
+                                class="bx bx-cog"></i><span>Extensões</span></a></li>
+                    <li><a href="https://wa.me/5551997421833?text=Ol%C3%A1%2C%20Devpoa!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Convertter%2C%20conversor%20de%20imagens."
+                            target="_blank" title="Solicite suporte via WhatsApp"><i
+                                class="bx bx-phone"></i><span>Contato</span></a></li>
+                </ul>
+            </div>
 
-        <div class="content">
+            <div class="content">
 
-            <nav class="navbar">
-                <!-- primeira nav -->
-                <div class="desktop-links">
-                    <div class="left-links">
-                        <a href="/api-docs" target="_blank"
-                            title="Saiba mais sobre como integrar nossa API em sua aplicação">API</a>
-                        <!-- <a href="javascript:void(0);" data-modal-target="#register">Registro</a> -->
-                        <a href="javascript:void(0);" data-modal-target="#new"
-                            title="Novidades sobre nossa plataforma">Novidades</a>
-                        <a href="javascript:void(0);" data-modal-target="#dev"
-                            title="Saiba mais sobre o desenvolvedor">Desenvolvedor</a>
-                    </div>
-                    <!-- <div class="right-links">
+                <nav class="navbar">
+                    <!-- primeira nav -->
+                    <div class="desktop-links">
+                        <div class="left-links">
+                            <a href="/api-docs" target="_blank"
+                                title="Saiba mais sobre como integrar nossa API em sua aplicação">API<span><i
+                                        class="bx bx-link-external bx-size"></i></span></a>
+                            <!-- <a href="javascript:void(0);" data-modal-target="#register">Registro</a> -->
+                            <a href="javascript:void(0);" data-modal-target="#new"
+                                title="Novidades sobre nossa plataforma">Novidades</a>
+                            <a href="javascript:void(0);" data-modal-target="#dev"
+                                title="Saiba mais sobre o desenvolvedor">Desenvolvedor</a>
+                        </div>
+                        <!-- <div class="right-links">
                     <a href="javascript:void(0);" data-modal-target="#login"> <i class="bx bx-user"></i> Login</a>
                 </div> -->
-                </div>
-                <button id="sidebar-toggle" class="navbar-toggler">☰</button>
-            </nav>
+                    </div>
+                    <button id="sidebar-toggle" class="navbar-toggler">☰</button>
+                </nav>
 
-            <nav class="navbar-2">
-                <!-- segunda nav -->
-                <div class="desktop-links-2">
-                    <img src="/logo.webp" class="img-fav" alt="Logo" title="Converetter &reg;">
-                    <a href="index" title="Página inicial">Conversor</a>
-                    <a href="#sobre" title="Saiba mais sobre o Convertter">Sobre</a>
-                    <a href="#extensoes" title="Saiba mais sobre as extensões mais usadas">Extensões</a>
-                    <a href="https://wa.me/5551997421833?text=Ol%C3%A1%2C%20Devpoa!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Convertter%2C%20conversor%20de%20imagens."
-                        target="_blank" title="Solicite suporte via WhatsApp">Suporte</a>
-                </div>
-            </nav>
+                <nav class="navbar-2">
+                    <!-- segunda nav -->
+                    <div class="desktop-links-2">
+                        <img src="/logo.webp" class="img-fav" alt="Logo" title="Converetter &reg;">
+                        <a href="index" title="Página inicial">Conversor</a>
+                        <a href="#sobre" title="Saiba mais sobre o Convertter">Sobre</a>
+                        <a href="#extensoes" title="Saiba mais sobre as extensões mais usadas">Extensões</a>
+                        <a href="https://wa.me/5551997421833?text=Ol%C3%A1%2C%20Devpoa!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Convertter%2C%20conversor%20de%20imagens."
+                            target="_blank" title="Solicite suporte via WhatsApp">Suporte <span><i
+                                    class="bx bx-link-external bx-size"></i></span></a>
+                    </div>
+                </nav>
+            </div>
+        </div>
 
-            <div class="container">
-                <h1>Convertter &reg;</h1>
-                <div class="content-title-destaque">
-                    <h3>Converta <strong class="destaque">+1K</strong> de imagens gratuitamente 😍</h3>
+        <div class="container container-title">
+            <h1>Convertter &reg;</h1>
+            <div class="content-title-destaque">
+                <h3>Converta <strong class="destaque">+1K</strong> de imagens gratuitamente 😍</h3>
+            </div>
+        </div>
+
+        <form id="uploadForm">
+            <div class="container-content">
+                <section class="botoes-content">
+                    <div class="container-file">
+                        <div class="custom-file-upload" onclick="document.getElementById('imageInput').click();">
+                            Selecione um Arquivo <i class='bx bxs-image-add bx-size'></i>
+                        </div>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" multiple required>
+                    <div id="progressContainer" class="progress" style="display: none;">
+                        <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
+                            style="width: 0%;"></div>
+                    </div>
+                    <div class="container-select-1">
+                        <select id="uploadFormatSelect">
+                            <option value="" selected disabled>*</option>
+                            <option value="jpg">JPG</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WEBP</option>
+                            <option value="tiff">TIFF</option>
+                            <option value="gif">GIF</option>
+                            <option value="heif">HEIF</option>
+                            <option value="heic">HEIC</option>
+                            <option value="raw">RAW</option>
+                            <option value="jp2">JP2</option>
+                            <option value="jpx">JPX</option>
+                            <option value="j2k">J2K</option>
+                            <option value="j2c">J2C</option>
+                            <option value="ico">ICO</option> <!-- ICO habilitado -->
+                            <option value="avif">AVIF</option>
+                            <option value="pdf">PDF</option>
+                        </select>
+                    </div>
+                    <h2 class="badge">Para</h2>
+                    <div class="container-select-1">
+                        <select id="convertFormatSelect">
+                            <option value="" selected disabled>*</option>
+                            <option value="jpg">JPG</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WEBP</option>
+                            <option value="tiff">TIFF</option>
+                            <option value="gif">GIF</option>
+                            <option value="heif">HEIF</option>
+                            <option value="heic">HEIC</option>
+                            <option value="raw">RAW</option>
+                            <option value="jp2">JP2</option>
+                            <option value="jpx">JPX</option>
+                            <option value="j2k">J2K</option>
+                            <option value="j2c">J2C</option>
+                            <option value="ico">ICO</option> <!-- ICO habilitado -->
+                            <option value="avif">AVIF</option>
+                            <option value="pdf">PDF</option>
+                        </select>
+                    </div>
+                </section>
+                <div class="container-info">
+                    <p class="titulo-input-up"> Clique
+                        no icone <button type="button" class="btn-info" data-modal-target="#info" title="Informações"><i
+                                class="bx bxs-info-circle"></i></button> para mais
+                        informações, sobre as conversões.</p>
                 </div>
             </div>
 
-            <form id="uploadForm">
-                <div class="container-content">
-                    <section class="botoes-content">
-                        <div class="container-file">
-                            <div class="custom-file-upload" onclick="document.getElementById('imageInput').click();">
-                                Selecione um Arquivo <i class='bx bxs-image-add bx-size'></i>
-                            </div>
-                        </div>
-                        <input type="file" id="imageInput" accept="image/*" multiple required>
-                        <div id="progressContainer" class="progress" style="display: none;">
-                            <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
-                                style="width: 0%;"></div>
-                        </div>
-                        <div class="container-select-1">
-                            <select id="uploadFormatSelect">
-                                <option value="" selected disabled>*</option>
-                                <option value="jpg">JPG</option>
-                                <option value="jpeg">JPEG</option>
-                                <option value="png">PNG</option>
-                                <option value="webp">WEBP</option>
-                                <option value="tiff">TIFF</option>
-                                <option value="gif">GIF</option>
-                                <option value="heif">HEIF</option>
-                                <option value="heic">HEIC</option>
-                                <option value="raw">RAW</option>
-                                <option value="jp2">JP2</option>
-                                <option value="jpx">JPX</option>
-                                <option value="j2k">J2K</option>
-                                <option value="j2c">J2C</option>
-                                <option value="ico">ICO</option> <!-- ICO habilitado -->
-                                <option value="avif">AVIF</option>
-                                <option value="pdf">PDF</option>
-                            </select>
-                        </div>
-                        <h2 class="badge">Para</h2>
-                        <div class="container-select-1">
-                            <select id="convertFormatSelect">
-                                <option value="" selected disabled>*</option>
-                                <option value="jpg">JPG</option>
-                                <option value="jpeg">JPEG</option>
-                                <option value="png">PNG</option>
-                                <option value="webp">WEBP</option>
-                                <option value="tiff">TIFF</option>
-                                <option value="gif">GIF</option>
-                                <option value="heif">HEIF</option>
-                                <option value="heic">HEIC</option>
-                                <option value="raw">RAW</option>
-                                <option value="jp2">JP2</option>
-                                <option value="jpx">JPX</option>
-                                <option value="j2k">J2K</option>
-                                <option value="j2c">J2C</option>
-                                <option value="ico">ICO</option> <!-- ICO habilitado -->
-                                <option value="avif">AVIF</option>
-                                <option value="pdf">PDF</option>
-                            </select>
-                        </div>
-                    </section>
-                    <div class="container-info">
-                        <p class="titulo-input-up"> Clique
-                            no icone <button type="button" class="btn-info" data-modal-target="#info"
-                                title="Informações"><i class="bx bxs-info-circle"></i></button> para mais
-                            informações, sobre as conversões.</p>
-                    </div>
-                </div>
-
-                <section class="container-img">
-                    <p class="titulo-tabela-up">Seus arquivos carregados, aparecem na tabela abaixo</p>
-                    <div id="uploadLinks">
-                        <table id="uploadTable">
-                            <thead>
-                                <tr>
-                                    <th>Imagem</th>
-                                    <th>Nome do Arquivo</th>
-                                    <th>Tamanho</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody id="previewContainer"></tbody>
-                        </table>
-                        <div id="batchActionsConverter" class="convert-action" style="display: none;">
-                            <button id="convertAllBtn">Converter Todas</button>
-                        </div>
-                    </div>
-                </section>
-
-            </form>
-
             <section class="container-img">
-                <p class="titulo-tabela-up">Sua(as) imagem(ns) convertida(as), aparecem na tabela abaixo </p>
-                <div id="downloadLinks">
-                    <table id="downloadsTable">
+                <p class="titulo-tabela-up">Seus arquivos carregados, aparecem na tabela abaixo</p>
+                <div id="uploadLinks">
+                    <table id="uploadTable">
                         <thead>
                             <tr>
                                 <th>Imagem</th>
@@ -221,20 +195,39 @@
                                 <th>Ações</th>
                             </tr>
                         </thead>
-                        <tbody id="downloadTableBody"></tbody>
+                        <tbody id="previewContainer"></tbody>
                     </table>
-                    <div id="batchActionsDownload" class="download-action" style="display: none;">
-                        <button id="downloadAllBtn">Baixar Todas</button>
+                    <div id="batchActionsConverter" class="convert-action" style="display: none;">
+                        <button id="convertAllBtn">Converter Todas</button>
                     </div>
                 </div>
             </section>
 
-            <div class="container-converte">
-                <p>Quer converter mais imagens? Clique no botão abaixo 💚</p><br>
-                <a href="index.html" class="btn-conveter" target="_self" title="Converter mais">Converter mais</a>
+        </form>
+
+        <section class="container-img">
+            <p class="titulo-tabela-up">Sua(as) imagem(ns) convertida(as), aparecem na tabela abaixo </p>
+            <div id="downloadLinks">
+                <table id="downloadsTable">
+                    <thead>
+                        <tr>
+                            <th>Imagem</th>
+                            <th>Nome do Arquivo</th>
+                            <th>Tamanho</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="downloadTableBody"></tbody>
+                </table>
+                <div id="batchActionsDownload" class="download-action" style="display: none;">
+                    <button id="downloadAllBtn">Baixar Todas</button>
+                </div>
             </div>
+        </section>
 
-
+        <div class="container-converte">
+            <p class="titulo-converte">Quer converter mais imagens? Clique no botão abaixo 💚</p><br>
+            <a href="index.html" class="btn-conveter" target="_self" title="Converter mais">Converter mais</a>
         </div>
 
         <section class="container-sobre" id="sobre">
